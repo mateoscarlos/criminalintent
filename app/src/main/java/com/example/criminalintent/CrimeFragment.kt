@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 
@@ -15,6 +16,8 @@ class CrimeFragment : Fragment() {
     private lateinit var crime: Crime
     private lateinit var titleField: EditText
     private lateinit var dateButton: Button
+    private lateinit var solvedCheckBox: CheckBox
+
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +32,7 @@ class CrimeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_crime, container, false) // Fragment's view will be hosted in the activity´s container view
         titleField = view.findViewById(R.id.crime_title_edit_text) as EditText
         dateButton = view.findViewById(R.id.crime_date_button) as Button
+        solvedCheckBox = view.findViewById(R.id.crime_solved_checkbox) as CheckBox
 
         dateButton.apply {
             text = crime.date.toString()
